@@ -40,6 +40,9 @@
         (f:close)
         line))))
 
+(fn M.absolute-path [path]
+  (vim.fs.normalize (vim.fn.fnamemodify path ":p")))
+
 (fn M.absglob [dir expr]
   "Glob all files under dir matching the expression and return the absolute paths."
   (vim.fn.globpath dir expr true true))
