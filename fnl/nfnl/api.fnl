@@ -62,7 +62,7 @@
   (let [dir (or dir (vim.fn.getcwd))
         {: config : root-dir : cfg} (config.find-and-load dir)]
     (if config
-      (let [path (fs.join-path [root-dir (vim.fn.expand (or path "%"))])
+      (let [path (fs.absolute-path (vim.fn.expand (or path "%")))
             result (compile.into-file
                      {: root-dir
                       : cfg
