@@ -17,8 +17,8 @@
     (or (not line) (header.tagged? line))))
 
 (fn M.macro-source? [{: source : path}]
-  (or (and (string.find source "%s*;+%s*%[nfnl%-macro%]") true)
-      (and path (str.ends-with? path ".fnlm"))))
+  (or (and (core.string? source) (string.find source "%s*;+%s*%[nfnl%-macro%]") true)
+      (and (core.string? path) path (str.ends-with? path ".fnlm"))))
 
 (fn valid-source-files [glob-fn {: root-dir : cfg}]
   "Return a list of all files we're allowed to compile. These are found by
