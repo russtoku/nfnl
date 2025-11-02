@@ -9,6 +9,7 @@ local config = autoload("nfnl.config")
 local notify = autoload("nfnl.notify")
 local fs = autoload("nfnl.fs")
 local gc = autoload("nfnl.gc")
+local vim = _G.vim
 local M = define("nfnl.api")
 M["find-orphans"] = function(_2_)
   local passive_3f = _2_["passive?"]

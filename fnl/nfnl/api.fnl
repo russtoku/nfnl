@@ -6,6 +6,7 @@
 (local notify (autoload :nfnl.notify))
 (local fs (autoload :nfnl.fs))
 (local gc (autoload :nfnl.gc))
+(local vim _G.vim)
 
 (local M (define :nfnl.api))
 
